@@ -4,6 +4,7 @@ namespace ActividadTDDApp
 {
     public class Funciones
     {
+        
         public static long CalcularFactorial(int n)
         {
             if (n < 0)
@@ -16,6 +17,13 @@ namespace ActividadTDDApp
                 result *= i;
             }
             return result;
+        }
+        
+        public static bool EsContrasenyaValida(string? contrasenya)
+        {
+            if (contrasenya == null || contrasenya.Length == 0 || contrasenya.Length < 8 || !contrasenya.Contains("#"))
+                return false;
+            return true;
         }
     }
 }

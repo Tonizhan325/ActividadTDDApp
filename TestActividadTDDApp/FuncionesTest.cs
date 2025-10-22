@@ -5,6 +5,7 @@ namespace TestActividadTDDApp
     [TestClass]
     public sealed class FuncionesTest
     {
+        
         [TestMethod]
         public void Es_Menor_A_0()
         {
@@ -23,6 +24,7 @@ namespace TestActividadTDDApp
             long result = Funciones.CalcularFactorial(5);
             Assert.AreEqual(120, result);
         }
+        
         [TestMethod]
         public void NoEstaVacia()
         {
