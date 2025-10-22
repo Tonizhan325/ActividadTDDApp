@@ -23,5 +23,35 @@ namespace TestActividadTDDApp
             long result = Funciones.CalcularFactorial(5);
             Assert.AreEqual(120, result);
         }
+        [TestMethod]
+        public void NoEstaVacia()
+        {
+            bool result = Funciones.EsContrasenyaValida("");
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void NoEsNull()
+        {
+            bool result = Funciones.EsContrasenyaValida(null);
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void TieneLongitud()
+        {
+            bool result = Funciones.EsContrasenyaValida("123456");
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void ContieneAlmohadilla()
+        {
+            bool result = Funciones.EsContrasenyaValida("123456789");
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void EstaBien()
+        {
+            bool result = Funciones.EsContrasenyaValida("12345678#");
+            Assert.IsTrue(result);
+        }
     }
 }
